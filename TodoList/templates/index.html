@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Created</th>
+            <th>Options</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{task.content}}</td>
+                <td>{{task.date_created.date()}}</td>
+                <td class="task_options">
+                    <form action="/delete/{{task.id}}">
+                        <input type="submit" value="Completed">
+                    </form>
+                    <form action="/update/{{task.id}}">
+                        <input type="submit" value="Update">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+    <form action="/" method="POST" class="new_task_input">
+        <input type="text" name="taskContent" placeholder="Enter Task">
+        <input type="submit" value="Add Task">
+    </form>
+</body>
+</html>

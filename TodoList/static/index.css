@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+}
+
+table td {
+    border: 1px solid black;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+task_options {
+    display: inline;
+
+}
+
+form {
+    margin-top: 7px;
+}
+
+.new_task_input {
+    margin-top: 20px;
+
+}
